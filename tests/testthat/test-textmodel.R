@@ -1,6 +1,6 @@
 require(quanteda)
 
-toks_test <- tokens(data_corpus_inaugural, remove_punct = TRUE)
+toks_test <- tokens(data_corpus_inaugural[1:59], remove_punct = TRUE)
 dfmt_test <- dfm(toks_test) %>%
     dfm_remove(stopwords("en"))
 toks_dict_test <- tokens_lookup(toks_test, data_dictionary_newsmap_en, level = 3)
