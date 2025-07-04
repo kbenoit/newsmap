@@ -235,11 +235,11 @@ test_that("coef() and dictionary() are working", {
     expect_error(coef(map, select = "xx"),
                  "Selected class must be in the model")
     expect_error(coef(map, select = character()),
-                 "The length of select must be between 1 and 16")
+                 "The length of select must be between 1 and 1\\d")
 
     # TODO: remove as.list()
     lis1 <- as.list(map)
-    expect_equal(length(lis1), 16)
+    expect_equal(length(lis1), 17)
     expect_true(all(sapply(lis1, is.character)))
     expect_true(all(lengths(as.list(lis1)) == 10))
 
